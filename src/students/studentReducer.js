@@ -83,7 +83,7 @@ const studentReducer = createSlice({
 
     builder.addCase(updateStudentAsync.fulfilled, (state, actions) => {
 
-      const studentIndex = state.students.findIndex(student => student.id == actions.payload.id)
+      const studentIndex = state.students.findIndex(student => student.id === actions.payload.id)
 
       state.status = 'Success'
       state.students[studentIndex] = actions.payload

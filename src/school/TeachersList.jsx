@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const TeachersList = () => {
   const { teachers, status, error } = useSelector((state) => state.school);
   const dispatch = useDispatch();
-  console.log(error);
+
 
   useEffect(() => {
     dispatch(fetchAllTeachers());

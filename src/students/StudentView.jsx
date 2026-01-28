@@ -7,7 +7,7 @@ const StudentView = () => {
   const { students, status, error } = useSelector((state) => state.students);
   const dispatch = useDispatch();
 
-  console.log(error);
+  console.log(status);
 
   useEffect(() => {
     dispatch(fetchStudents());
@@ -22,7 +22,7 @@ const StudentView = () => {
 
       <h1 style={{paddingTop: '15px'}}>Student List </h1>
       <ul className="py-4">
-        {status === "loading" ? (
+        {status === "Loading" ? (
           <p>Loading...</p>
         ) : error ? (
           <p>{error}</p>

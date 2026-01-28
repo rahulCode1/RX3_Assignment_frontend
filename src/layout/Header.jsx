@@ -25,7 +25,7 @@ const Header = () => {
                 <NavLink
                   className="nav-link active text-decoration-none text-reset"
                   aria-current="page"
-                  to="/students"
+                  to="/"
                 >
                   Students
                 </NavLink>
@@ -33,7 +33,7 @@ const Header = () => {
               <li className="nav-item">
                 <NavLink
                   className="nav-link text-decoration-none text-reset"
-                  to="/students/classes"
+                  to="/classes"
                 >
                   Classes
                 </NavLink>

@@ -24,7 +24,7 @@ export const fetchAllTeachers = createAsyncThunk('teachers/get', async () => {
 
 
 export const updateTeacher = createAsyncThunk('teachers/update', async (teacher) => {
-    console.log()
+    console.log(teacher)
     try {
         const teacherId = teacher.id
         const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/teachers/${teacherId}`, teacher)

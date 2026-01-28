@@ -7,6 +7,8 @@ const StudentView = () => {
   const { students, status, error } = useSelector((state) => state.students);
   const dispatch = useDispatch();
 
+  console.log(error);
+
   useEffect(() => {
     dispatch(fetchStudents());
   }, []);
@@ -18,6 +20,7 @@ const StudentView = () => {
         Add Student
       </NavLink>
 
+      <h1 style={{paddingTop: '15px'}}>Student List </h1>
       <ul className="py-4">
         {status === "loading" ? (
           <p>Loading...</p>
@@ -26,7 +29,7 @@ const StudentView = () => {
         ) : students.length === 0 ? (
           <p>No students found</p>
         ) : (
-          status &&
+          students &&
           students.length > 0 &&
           students.map((student) => (
             <li key={student.id}>

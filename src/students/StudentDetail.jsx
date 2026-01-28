@@ -19,7 +19,7 @@ const StudentDetail = () => {
 
   const handleDelete = async (id) => {
     await dispatch(deleteStudentAsync(id));
-    navigate(`/students`);
+    navigate(`/`);
   };
 
   return (
@@ -34,7 +34,7 @@ const StudentDetail = () => {
         </div>
         <NavLink
           state={{ ...studentInfo }}
-          to="/students/addStudent"
+          to="/addStudent"
           className="btn btn-secondary"
         >
           Edit Details

@@ -34,6 +34,7 @@ const AddTeacher = () => {
       navigate(`/school/teachers/${teacherInfo.id}`);
     } else {
      await dispatch(addTeachers(data));
+     navigate(`/school/teachers`)
     }
   };
 

@@ -31,6 +31,8 @@ const StudentForm = () => {
     });
   };
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (studentInfo) {
@@ -55,12 +57,13 @@ const StudentForm = () => {
           attendance: Number(formData.attendance),
         }),
       );
-      navigate(`/students/${studentInfo.id}`);
+      navigate(`/${studentInfo.id}`);
     } else {
       if (
         formData.name.length === 0 ||
         Number(formData.age) < 0 ||
-        formData.grade.length === 0
+        formData.grade.length === 0 ||
+        formData.gender.length === 0
       ) {
         return alert("Please provide correct form input values.");
       }
@@ -76,11 +79,9 @@ const StudentForm = () => {
         }),
       );
       setFormData(initialState);
-      navigate(`/students`);
+      navigate(`/`);
     }
   };
-
-  console.log(formData);
 
   return (
     <main className="container py-4">
@@ -130,6 +131,7 @@ const StudentForm = () => {
                 value="male"
                 checked={formData.gender === "male"}
                 onChange={handleOnChange}
+                required
               />
               Male
             </label>

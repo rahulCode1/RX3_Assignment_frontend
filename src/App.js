@@ -20,34 +20,30 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <StudentView />,
+
+      },
+      {
+        index: true,
+        element: <StudentView />,
+      },
+      {
+        path: "addStudent",
         element: <StudentForm />,
       },
       {
-        path: "students",
-
-        children: [
-
-          {
-            index: true,
-            element: <StudentView />,
-          },
-          {
-            path: "addStudent",
-            element: <StudentForm />,
-          },
-          {
-            path: ":id",
-            element: <StudentDetail />
-          },
-          {
-            path: "classes",
-            element: <ClassView />
-          }
-        ]
+        path: ":id",
+        element: <StudentDetail />
       },
       {
+        path: "classes",
+        element: <ClassView />
+      },
+
+
+      {
         path: 'school',
-        // element: <SchoolView />,
+
         children: [
           {
             index: true, element: <SchoolView />

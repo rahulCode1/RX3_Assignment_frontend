@@ -10,7 +10,7 @@ const TeachersList = () => {
 
   useEffect(() => {
     dispatch(fetchAllTeachers());
-  }, []);
+  }, [dispatch]);
 
   return (
     <main className="container py-4">

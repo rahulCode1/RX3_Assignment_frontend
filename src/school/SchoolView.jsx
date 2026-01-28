@@ -40,7 +40,7 @@ const SchoolView = () => {
         topperStudent: topperStudent && topperStudent.name,
       }),
     );
-  }, [totalNumberOfStudents, avgAttendance, avgMarks, topperStudent]);
+  }, [dispatch, totalNumberOfStudents, avgAttendance, avgMarks, topperStudent]);
 
   return (
     <main className="container py-4">

@@ -11,7 +11,7 @@ const StudentView = () => {
 
   useEffect(() => {
     dispatch(fetchStudents());
-  }, []);
+  }, [dispatch]);
 
   return (
     <main className="container py-3">

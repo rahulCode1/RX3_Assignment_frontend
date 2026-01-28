@@ -110,9 +110,8 @@ const schoolReducer = createSlice({
             state.status = 'Success'
 
 
-            const teacherIndex = state.teachers.findIndex(teacher => teacher.id === actions.payload.id)
-
-            state.teachers[teacherIndex] = state.teachers.filter(teacher => teacher.id !== actions.payload)
+           
+            state.teachers = state.teachers.filter(teacher => teacher.id !== actions.payload)
         })
 
         builder.addCase(deleteTeacher.rejected, (state, actions) => {

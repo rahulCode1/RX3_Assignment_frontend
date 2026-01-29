@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter, setSortBy } from "./studentReducer";
+import { fetchStudents } from "./studentReducer";
+import { useEffect } from "react";
 
 const ClassView = () => {
   const students = useSelector((state) => state.students.students);
@@ -30,6 +32,10 @@ const ClassView = () => {
   const handleSortChange = (e) => {
     dispatch(setSortBy(e.target.value));
   };
+
+  useEffect(() => {
+    dispatch(fetchStudents());
+  }, []);
 
   return (
     <main className="container py-4">

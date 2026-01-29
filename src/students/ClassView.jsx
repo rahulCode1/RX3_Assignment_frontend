@@ -37,7 +37,7 @@ const ClassView = () => {
 
   useEffect(() => {
     dispatch(fetchStudents());
-  }, []);
+  }, [dispatch]);
 
   return (
     <main className="container py-4">

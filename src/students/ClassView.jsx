@@ -4,9 +4,11 @@ import { fetchStudents } from "./studentReducer";
 import { useEffect } from "react";
 
 const ClassView = () => {
-  const students = useSelector((state) => state.students.students);
+  const { students, error, status } = useSelector((state) => state.students);
   const filter = useSelector((state) => state.students.filter);
   const sortBy = useSelector((state) => state.students.sortBy);
+
+  console.log(students);
 
   const dispatch = useDispatch();
 
@@ -56,18 +58,24 @@ const ClassView = () => {
           <option value={"Attendance"}>Attendance</option>
         </select>
       </div>
-      <ul>
-        {sortedStudents.map((student) => (
-          <li key={student.id}>
-            <p>
-              {student.name} - {student.gender}
-              {student.marks &&
-                student.attendance &&
-                ` - Marks: ${student.marks} - Attendance:
+      <ul className="py-3">
+        {status === "Loading" ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : (
+          sortedStudents.map((student) => (
+            <li key={student.id}>
+              <p>
+                {student.name} - {student.gender}
+                {student.marks &&
+                  student.attendance &&
+                  ` - Marks: ${student.marks} - Attendance:
               ${student.attendance}`}
-            </p>
-          </li>
-        ))}
+              </p>
+            </li>
+          ))
+        )}
       </ul>
     </main>
   );
